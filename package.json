@@ -1,0 +1,29 @@
+{
+  "name": "reservations-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/server.js",
+  "scripts": {
+    "build-ts": "tsc",
+    "lint": "tslint --project tsconfig.json './src/**/*.ts'",
+    "build": "npm run build-ts && npm run lint",
+    "dev": "ts-node ./src/server.ts",
+    "prod": "npm run build && nodemon ./dist/server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "mongoose": "^5.2.4"
+  },
+  "devDependencies": {
+    "@types/express": "^4.16.0",
+    "@types/mongodb": "^3.1.2",
+    "@types/mongoose": "^5.2.2",
+    "nodemon": "^1.18.3",
+    "tslint": "^5.11.0",
+    "tslint-config-airbnb": "^5.9.2",
+    "typescript": "^2.9.2"
+  }
+}
