@@ -7,8 +7,9 @@
     "build-ts": "tsc",
     "lint": "tslint --project tsconfig.json './src/**/*.ts'",
     "build": "npm run build-ts && npm run lint",
+    "serve": "nodemon ./dist/server.js",
     "dev": "ts-node ./src/server.ts",
-    "prod": "npm run build && nodemon ./dist/server.js"
+    "prod": "npm run build && npm run serve"
   },
   "author": "",
   "license": "ISC",

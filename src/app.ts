@@ -2,12 +2,13 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
 import { Routes } from './routes/crmRoutes';
+import { MONGODB_URI } from './config';
 
 class App {
   public app: express.Application;
   public routePrv: Routes = new Routes;
 
-  public mongoUrl: string = 'mongodb://localhost/CRMdb';
+  public mongoUrl: string = MONGODB_URI;
 
   constructor() {
     this.app = express();

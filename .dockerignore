@@ -1,0 +1,8 @@
+.vscode
+node_modules
+test
+.editorconfig
+.gitignore
+icon.png
+LICENSE
+README.md
