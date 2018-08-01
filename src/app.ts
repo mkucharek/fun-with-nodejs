@@ -1,20 +1,20 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
-import { Routes } from './routes/crmRoutes';
 import { MONGODB_URI } from './config';
+
+import calendars from './calendars';
 
 class App {
   public app: express.Application;
-  public routePrv: Routes = new Routes;
 
   public mongoUrl: string = MONGODB_URI;
 
   constructor() {
     this.app = express();
     this.config();
-    this.routePrv.routes(this.app);
     this.mongoSetup();
+    this.routeSetup();
   }
 
   private config(): void {
@@ -26,8 +26,11 @@ class App {
   }
 
   private mongoSetup(): void {
-    (<any>mongoose).Promise = global.Promise;
-    mongoose.connect(this.mongoUrl);
+    mongoose.connect(this.mongoUrl, { useNewUrlParser: true });
+  }
+
+  private routeSetup(): void {
+    calendars(this.app);
   }
 }
 

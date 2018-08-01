@@ -14,6 +14,7 @@ module.exports = {
     '**/__tests__/**/*.(ts|js)?(x)',
     '**/?(*.)+(spec|test).(ts|js)?(x)'
   ],
+  collectCoverage: true,
   coverageDirectory: 'coverage',
   collectCoverageFrom: [
     'src/**/*.{ts,js}',

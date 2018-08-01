@@ -1,6 +1,5 @@
 version: "3"
 services:
-
   res-server:
     build: .
     image: res-server:lates
